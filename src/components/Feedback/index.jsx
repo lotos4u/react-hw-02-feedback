@@ -1,20 +1,28 @@
-import React from "react";
+import React, {Component} from "react";
 import PropTypes from 'prop-types';
 import FeedbackForm from "../Form";
 import FeedbackStatistics from "../Statistics";
 
-const Feedback = (props) => {
-    const state = {
+class Feedback extends Component {
+    state = {
         good: 0,
         neutral: 0,
         bad: 0,
     };
 
-    return <>
-        <FeedbackForm/>
-        <FeedbackStatistics data={state} />
-    </>;
-};
+    handleSubmit = (answer) => {
+        const newState = {...this.state};
+        newState[answer] = this.state[answer] + 1;
+        this.setState(newState);
+    };
+
+    render() {
+        return <>
+            <FeedbackForm onSubmit={this.handleSubmit}/>
+            <FeedbackStatistics data={this.state} />
+        </>;
+    }
+}
 
 Feedback.propTypes = {}
 
