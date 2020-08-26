@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import PropTypes from 'prop-types';
 import FeedbackForm from "../Form";
 import FeedbackStatistics from "../Statistics";
 
@@ -23,8 +22,6 @@ class Feedback extends Component {
         </>;
     }
 }
-
-Feedback.propTypes = {}
 
 Feedback.defaultProps = {}
 
