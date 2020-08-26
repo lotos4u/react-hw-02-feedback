@@ -38,6 +38,4 @@ FeedbackStatistics.propTypes = {
     }),
 }
 
-FeedbackStatistics.defaultProps = {}
-
 export default FeedbackStatistics;

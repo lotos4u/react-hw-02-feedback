@@ -10,19 +10,19 @@ class Feedback extends Component {
     };
 
     handleSubmit = (answer) => {
-        const newState = {...this.state};
-        newState[answer] = this.state[answer] + 1;
-        this.setState(newState);
+        this.setState({
+            [answer]: this.state[answer] + 1,
+        }, () => {
+            // alert('Thanks!');
+        });
     };
 
     render() {
         return <>
             <FeedbackForm onSubmit={this.handleSubmit}/>
-            <FeedbackStatistics data={this.state} />
+            <FeedbackStatistics data={this.state}/>
         </>;
     }
 }
-
-Feedback.defaultProps = {}
 
 export default Feedback;

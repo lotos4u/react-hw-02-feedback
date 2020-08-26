@@ -1,10 +1,6 @@
 import React from 'react';
 import Feedback from "./components/Feedback";
 
-function App() {
-    return (
-        <Feedback/>
-    );
-}
+const App = () => <Feedback/>
 
 export default App;
